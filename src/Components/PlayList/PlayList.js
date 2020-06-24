@@ -2,21 +2,20 @@ import React from 'react';
 import TrackList from '../TrackList/TrackList';
 import './PlayList.css';
 
-
-
-
 class PlayList extends React.Component {
-    render(){
-        return(
-            
-        <div className="Playlist">
-        <input defaultValue={"New Playlist"}/>
-        <TrackList />
-        <button className="Playlist-save">SAVE TO SPOTIFY</button>
-        </div>
-
-        )
-    }
-};
+  render() {
+    return (
+      <div className='Playlist'>
+        <input defaultValue={'New Playlist'} />
+        <TrackList
+          tracks={this.props.PlaylistTracks}
+          removeTrack={this.props.removeTrack}
+          isRemoval={true}
+        />
+        <button className='Playlist-save'>SAVE TO SPOTIFY</button>
+      </div>
+    );
+  }
+}
 
 export default PlayList;
